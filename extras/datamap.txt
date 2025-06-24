@@ -1,0 +1,25 @@
+ULTIMATE DATA ANALYST ROADMAP -2025 
+Disclaimer - In case you are a fresher, preparing for a Data field interview, or an experienced 
+person who wants to transition their field then you can follow this Roadmap. 
+Definition of Data Analyst 
+A Data Analyst in 2025 is a professional who collects, processes, and interprets data to help 
+organizations make informed decisions. With advancements in AI, automation, and cloud 
+computing, the role has evolved beyond traditional reporting to include predictive analytics, 
+AI-powered insights, and real-time data storytelling. 
+How is a Data Analyst Different in 2025? 
+●  AI-Powered Analytics  – Analysts rely on AI-driven  tools to generate insights faster. 
+●  Cloud-First Approach  – Data is processed & analyzed  in cloud environments for 
+scalability. 
+●  DataOps & Automation  – Manual tasks are reduced with  automated pipelines. 
+●  Self-Service Analytics  – Business users can generate  insights using AI chatbots. 
+●  AI & ML Awareness  – While not Data Scientists, Analysts  use low-code ML tools for 
+predictions. 
+Tech-stack Required 
+1.  Basic Maths & Statistics 
+2.  Excel 
+3.  SQL & DBMS Knowledge 
+4.  Visualisation Tools - Power BI/Tableau 
+5.  Python & EDA 
+6.  Cloud knowledge 
+7.  Basic Machine Learning Algorithms 
+1.  BASIC MATHS & STATISTICS  (Week-1) 
