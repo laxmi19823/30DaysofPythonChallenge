@@ -6,10 +6,11 @@ from datetime import datetime
 from PIL import Image, ImageTk
 import os
 
-# ---------- Paths ----------
+# ---------- File Paths ----------
 PROMPTS_FILE = r"C:\Users\laxmi\OneDrive\Desktop\30\Day29\writing_prompts.json"
 LOG_FILE = r"C:\Users\laxmi\OneDrive\Desktop\30\Day29\prompt_log.txt"
 BG_IMAGE_PATH = r"C:\Users\laxmi\OneDrive\Desktop\30\Day29\Background.png"
+WAND_ICON_PATH = r"C:\Users\laxmi\OneDrive\Desktop\30\Day29\wand.png"
 
 # ---------- Load Prompts ----------
 def load_prompts():
@@ -25,7 +26,7 @@ def show_prompt():
     if not category:
         messagebox.showwarning("⚠️ No Category", "Please select a category.")
         return
-    prompts = data.get(category.lower())  # match lowercase key
+    prompts = data.get(category.lower())
     if prompts:
         global current_prompt
         current_prompt = random.choice(prompts)
@@ -45,7 +46,7 @@ def save_prompt():
     else:
         messagebox.showwarning("⚠️ No Prompt", "Please generate a prompt before saving.")
 
-# ---------- View Saved Prompts ----------
+# ---------- View Saved ----------
 def show_saved_prompts():
     if not os.path.exists(LOG_FILE):
         messagebox.showinfo("No Logs", "No saved prompts found yet.")
@@ -67,11 +68,9 @@ def show_saved_prompts():
 def toggle_theme():
     global is_dark_mode, theme
     is_dark_mode = not is_dark_mode
-
     theme = dark_theme if is_dark_mode else light_theme
     root.configure(bg=theme['bg'])
 
-    # Apply theme colors
     for widget in all_widgets:
         if isinstance(widget, tk.Label) or isinstance(widget, tk.Button):
             widget.config(bg=theme['bg'], fg=theme['fg'])
@@ -85,19 +84,19 @@ def toggle_theme():
 
 # ---------- GUI Setup ----------
 root = tk.Tk()
-root.title("Writing Prompt Generator")
+root.title("✨ PromptWand")
 
 screen_width = root.winfo_screenwidth()
 screen_height = root.winfo_screenheight()
 root.geometry(f"{screen_width}x{screen_height}")
 
-# Fonts
+# ---------- Fonts ----------
 FONT_HEADER = ("Georgia", 24, "bold")
 FONT_MAIN = ("Georgia", 15)
 FONT_COMBO = ("Segoe UI", 16)
 FONT_BUTTON = ("Segoe UI", 14, "bold")
 
-# Themes
+# ---------- Theme Config ----------
 light_theme = {
     'bg': "SystemButtonFace",
     'fg': "black",
@@ -121,50 +120,56 @@ dark_theme = {
 is_dark_mode = False
 theme = light_theme
 
-# Load prompts
+# ---------- Background ----------
+if os.path.exists(BG_IMAGE_PATH):
+    bg_image = Image.open(BG_IMAGE_PATH).resize((screen_width, screen_height))
+    bg_photo = ImageTk.PhotoImage(bg_image)
+    bg_label = tk.Label(root, image=bg_photo)
+    bg_label.place(x=0, y=0, relwidth=1, relheight=1)
+
+# ---------- Load Prompts ----------
 data = load_prompts()
 if not data:
     root.destroy()
     exit()
 current_prompt = None
 
-# Background Image
-bg_image = Image.open(BG_IMAGE_PATH).resize((screen_width, screen_height))
-bg_photo = ImageTk.PhotoImage(bg_image)
-bg_label = tk.Label(root, image=bg_photo)
-bg_label.place(x=0, y=0, relwidth=1, relheight=1)
-
-# Theme Toggle Button
+# ---------- Theme Button ----------
 theme_button = tk.Button(root, text="🌙 Dark Mode", command=toggle_theme,
                          font=("Segoe UI", 12), bg="#D0D3D4", fg="black", relief="raised")
 theme_button.pack(pady=(10, 5))
 
-# Header
+# ---------- Header ----------
 header_frame = tk.Frame(root, bg=theme['bg'])
 header_frame.pack(pady=(5, 10))
 
-label_emoji = tk.Label(header_frame, text="🪄", font=("Segoe UI Emoji", 26), bg=theme['bg'])
-label_emoji.pack(side="left", padx=(0, 10))
+if os.path.exists(WAND_ICON_PATH):
+    wand_img = Image.open(WAND_ICON_PATH).resize((32, 32), Image.Resampling.LANCZOS)
+    wand_photo = ImageTk.PhotoImage(wand_img)
+    wand_label = tk.Label(header_frame, image=wand_photo, bg=theme['bg'])
+    wand_label.image = wand_photo
+    wand_label.pack(side="left", padx=(0, 10))
+else:
+    print("❌ wand.png not found!")
 
 label_text = tk.Label(header_frame, text="Select Your Category", font=FONT_HEADER,
                       bg=theme['bg'], fg=theme['fg'])
 label_text.pack(side="left")
 
-# Dropdown
+# ---------- Dropdown ----------
 category_var = tk.StringVar()
 category_menu = ttk.Combobox(root, textvariable=category_var, state="readonly",
                              font=FONT_COMBO, width=40)
 category_menu['values'] = [cat.capitalize() for cat in data.keys()]
 category_menu.pack(pady=(0, 15))
 
-# Buttons
+# ---------- Buttons ----------
 generate_button = tk.Button(root, text="⚒️ Generate Prompt", command=show_prompt,
                             font=FONT_BUTTON, bg=theme['button_bg'], fg=theme['button_fg'],
-                            activebackground=theme['active_bg'], relief="flat",
-                            padx=20, pady=10)
+                            activebackground=theme['active_bg'], relief="flat", padx=20, pady=10)
 generate_button.pack(pady=5)
 
-# Prompt Box
+# ---------- Prompt Display ----------
 result_frame = tk.Frame(root, bg=theme['textbox'], bd=2, relief="groove")
 result_frame.pack(pady=25, padx=100, fill="x")
 
@@ -173,27 +178,24 @@ result_text = tk.Text(result_frame, wrap=tk.WORD, height=8,
                       state='disabled', padx=15, pady=10, bd=0)
 result_text.pack(expand=True, fill="both")
 
-# Save Button
+# ---------- Save & View Buttons ----------
 save_button = tk.Button(root, text="💾 Save Prompt", command=save_prompt,
                         font=FONT_BUTTON, bg=theme['save_bg'], fg=theme['button_fg'],
-                        activebackground=theme['active_bg'], relief="flat",
-                        padx=20, pady=10)
+                        activebackground=theme['active_bg'], relief="flat", padx=20, pady=10)
 save_button.pack(pady=(0, 10))
 
-# View Button
 view_button = tk.Button(root, text="📖 View Saved Prompts", command=show_saved_prompts,
                         font=FONT_BUTTON, bg=theme['view_bg'], fg=theme['button_fg'],
-                        activebackground=theme['active_bg'], relief="flat",
-                        padx=20, pady=10)
+                        activebackground=theme['active_bg'], relief="flat", padx=20, pady=10)
 view_button.pack(pady=(0, 10))
 
-# Footer
+# ---------- Footer ----------
 footer = tk.Label(root, text="⚙️ Designed by Laxmi Prasanna", font=("Segoe UI", 11),
                   bg="#0F2027", fg="#E0E0E0")
 footer.pack(side="bottom", pady=10)
 
-# Register widgets for theme switching
-all_widgets = [label_emoji, label_text, result_text, footer, generate_button, save_button, view_button, theme_button]
+# ---------- Register Widgets ----------
+all_widgets = [label_text, result_text, footer, generate_button, save_button, view_button, theme_button]
 
 # ---------- Main Loop ----------
 root.mainloop()
