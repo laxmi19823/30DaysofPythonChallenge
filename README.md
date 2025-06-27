@@ -53,7 +53,7 @@ It includes:
 | Day 30 | Final Reflection & Showcase              |
 
 
-## 📅 Day 29: Writing Prompt Generator
+## 📅 Day 29:PromptWand
 
 A creative GUI app using `Tkinter` to generate category-based writing prompts.
 
