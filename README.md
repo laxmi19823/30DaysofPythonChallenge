@@ -73,7 +73,7 @@ An interactive Python interview practice app built with Tkinter.
 ⚙️ Keyword match & percentage score
 📁 JSON-driven question storage
 
-🔗 View Code
+🔗 [View Code](Lastday/app.py)
 
 
 ## ✍️ Reflections
