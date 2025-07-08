@@ -64,6 +64,18 @@ A creative GUI app using `Tkinter` to generate category-based writing prompts.
 
 🔗 [View Code](./Day29/journea_prompt_gui.py)
 
+## 📅 Day 30: InterviewMate
+
+An interactive Python interview practice app built with Tkinter.
+
+🧠 Answer-based Q&A (not MCQs)
+📝 5 basic Python questions per topic
+⚙️ Keyword match & percentage score
+📁 JSON-driven question storage
+
+🔗 View Code
+
+
 ## ✍️ Reflections
 
 This challenge helped me strengthen my problem-solving skills in Python and built my confidence in practical coding.  
