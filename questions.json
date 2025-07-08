@@ -1,0 +1,544 @@
+{
+  "Python":{
+  "Python_Basics_and_Syntax": [
+    {
+      "q": "What are the key features of Python?",
+      "a": "Python is interpreted, high-level, dynamically typed, and supports object-oriented, functional, and procedural programming paradigms.",
+      "keywords": ["interpreted", "high-level", "dynamically typed", "object-oriented", "functional", "procedural"]
+    },
+    {
+      "q": "How do you write a comment in Python?",
+      "a": "Single-line comments use the # symbol. Multi-line comments can be written using triple quotes (''' or \"\"\").",
+      "keywords": ["#", "single-line", "triple quotes", "'''", "\"\"\""]
+    },
+    {
+      "q": "What is the purpose of indentation in Python?",
+      "a": "Indentation defines blocks of code. It replaces braces {} and is mandatory to indicate block structure like loops or conditionals.",
+      "keywords": ["indentation", "blocks", "braces", "mandatory", "loops", "conditionals"]
+    },
+    {
+      "q": "How do you take input from the user in Python?",
+      "a": "Use the input() function. Example: name = input(\"Enter your name: \").",
+      "keywords": ["input()", "function", "user input"]
+    },
+    {
+      "q": "How do you print output to the screen in Python?",
+      "a": "Use the print() function. Example: print(\"Hello World\").",
+      "keywords": ["print()", "function", "output"]
+    }
+  ],
+  "Strings_and_Numbers": [
+    {
+      "q": "How do you check if a string contains only digits?",
+      "a": "Use the isdigit() method: \"123\".isdigit() returns True.",
+      "keywords": ["isdigit()", "method", "digits", "numeric"]
+    },
+    {
+      "q": "How do you convert a float to a string?",
+      "a": "Use the str() function. Example: str(3.14) returns '3.14'.",
+      "keywords": ["str()", "function", "convert", "float", "string"]
+    },
+    {
+      "q": "What is the difference between isnumeric() and isdigit()?",
+      "a": "isnumeric() returns True for all numeric characters including fractions and superscripts. isdigit() is limited to decimal digits.",
+      "keywords": ["isnumeric()", "isdigit()", "fractions", "superscripts", "decimal"]
+    },
+    {
+      "q": "How do you format a string using placeholders?",
+      "a": "Use f-strings or str.format(). Example: f\"Hello {name}\" or \"Hello {}\".format(name).",
+      "keywords": ["f-strings", "str.format()", "placeholders", "string formatting"]
+    },
+    {
+      "q": "How do you round a number to 2 decimal places in Python?",
+      "a": "Use round(number, 2). Example: round(3.14159, 2) returns 3.14.",
+      "keywords": ["round()", "decimal places", "2", "floating point"]
+    }
+  ],
+  "Lists_and_Tuples": [
+    {
+      "q": "What is the difference between a list and a tuple in Python?",
+      "a": "Lists are mutable and defined using [], while tuples are immutable and defined using ().",
+      "keywords": ["list", "tuple", "mutable", "immutable", "[]", "()"]
+    },
+    {
+      "q": "How do you add an item to a list?",
+      "a": "Use append() to add at the end. Example: my_list.append(10).",
+      "keywords": ["append()", "method", "add item", "list"]
+    },
+    {
+      "q": "How do you slice a list in Python?",
+      "a": "Use [start:stop:step] syntax. Example: my_list[1:4] returns items at index 1 to 3.",
+      "keywords": ["slice", "list", "[start:stop:step]", "index"]
+    },
+    {
+      "q": "How can you unpack a tuple?",
+      "a": "Use multiple variables. Example: a, b = (1, 2).",
+      "keywords": ["unpack", "tuple", "multiple variables", "assignment"]
+    },
+    {
+      "q": "How do you combine two lists?",
+      "a": "Use the + operator. Example: list1 + list2.",
+      "keywords": ["combine", "lists", "+ operator", "concatenate"]
+    }
+  ],
+  "Sets_and_Dictionaries": [
+    {
+      "q": "What is the difference between a set and a dictionary in Python?",
+      "a": "Sets store unique values without keys, while dictionaries store key-value pairs.",
+      "keywords": ["set", "dictionary", "unique values", "key-value pairs"]
+    },
+    {
+      "q": "How do you add an element to a set?",
+      "a": "Use the add() method. Example: my_set.add(5).",
+      "keywords": ["add()", "method", "set", "element"]
+    },
+    {
+      "q": "How do you remove a key from a dictionary?",
+      "a": "Use the del keyword or pop() method. Example: del my_dict['key'] or my_dict.pop('key').",
+      "keywords": ["remove", "key", "del", "pop()", "dictionary"]
+    },
+    {
+      "q": "What happens when you add a duplicate element to a set?",
+      "a": "The set ignores duplicates and keeps only unique elements.",
+      "keywords": ["duplicate", "set", "ignores", "unique elements"]
+    },
+    {
+      "q": "How do you check if a key exists in a dictionary?",
+      "a": "Use the in keyword. Example: 'key' in my_dict.",
+      "keywords": ["check", "key exists", "in keyword", "dictionary"]
+    }
+  ],
+  "Conditionals_and_Loops": [
+    {
+      "q": "What are the different conditional statements in Python?",
+      "a": "Python uses if, elif, and else for conditional branching.",
+      "keywords": ["conditional", "if", "elif", "else", "branching"]
+    },
+    {
+      "q": "How do you write a while loop?",
+      "a": "Use while with a condition. Example: while x < 5:.",
+      "keywords": ["while", "loop", "condition"]
+    },
+    {
+      "q": "What is the difference between break and continue?",
+      "a": "break exits the loop, continue skips to the next iteration.",
+      "keywords": ["break", "continue", "exit", "skip", "iteration", "loop"]
+    },
+    {
+      "q": "How do you loop over a range of numbers?",
+      "a": "Use the range() function with a for loop. Example: for i in range(5):.",
+      "keywords": ["range()", "function", "for loop", "numbers", "iteration"]
+    },
+    {
+      "q": "What is a nested loop?",
+      "a": "A loop inside another loop, used for multi-dimensional data.",
+      "keywords": ["nested", "loop", "multi-dimensional", "inner", "outer"]
+    }
+  ],
+  "Functions": [
+    {
+      "q": "How do you define a function in Python?",
+      "a": "Use the def keyword. Example: def greet():.",
+      "keywords": ["define", "function", "def", "keyword"]
+    },
+    {
+      "q": "What is the purpose of the return statement?",
+      "a": "It returns a value from a function to the caller.",
+      "keywords": ["return", "statement", "value", "function", "caller"]
+    },
+    {
+      "q": "What are default arguments in functions?",
+      "a": "Arguments that take default values if not provided by the caller.",
+      "keywords": ["default", "arguments", "parameters", "function"]
+    },
+    {
+      "q": "What is the difference between *args and **kwargs?",
+      "a": "*args collects positional arguments, **kwargs collects keyword arguments.",
+      "keywords": ["*args", "**kwargs", "positional", "keyword", "arguments"]
+    },
+    {
+      "q": "Can you define a function inside another function?",
+      "a": "Yes, Python supports nested functions.",
+      "keywords": ["nested", "functions", "inner", "outer"]
+    }
+  ],
+  "Lambda_and_Map_Filter_Reduce": [
+    {
+      "q": "What is a lambda function in Python?",
+      "a": "A lambda function is an anonymous, single-expression function defined using the lambda keyword.",
+      "keywords": ["lambda", "function", "anonymous", "single-expression"]
+    },
+    {
+      "q": "How is the map() function used in Python?",
+      "a": "map() applies a function to each item of an iterable. Example: map(str.upper, ['a', 'b']).",
+      "keywords": ["map()", "function", "apply", "iterable", "transformation"]
+    },
+    {
+      "q": "What does the filter() function do?",
+      "a": "filter() returns items from an iterable for which a given function returns True.",
+      "keywords": ["filter()", "function", "iterable", "True", "selection"]
+    },
+    {
+      "q": "What is the purpose of reduce() in Python?",
+      "a": "reduce() applies a rolling computation to a sequence and returns a single value. It's part of the functools module.",
+      "keywords": ["reduce()", "functools", "rolling computation", "aggregation"]
+    },
+    {
+      "q": "When should you use lambda over def?",
+      "a": "Use lambda for short, throwaway functions that are used immediately and don't require naming.",
+      "keywords": ["lambda", "def", "short", "throwaway", "anonymous"]
+    }
+  ],
+  "Comprehensions": [
+    {
+      "q": "What is list comprehension in Python?",
+      "a": "A concise way to create lists using a single line of code. Example: [x for x in range(5)].",
+      "keywords": ["list", "comprehension", "concise", "single line", "for"]
+    },
+    {
+      "q": "How do you write dictionary comprehension?",
+      "a": "By specifying key-value pairs: {x: x*x for x in range(3)}.",
+      "keywords": ["dictionary", "comprehension", "key-value", "for"]
+    },
+    {
+      "q": "Can you use if-else in list comprehension?",
+      "a": "Yes. Example: [x if x % 2 == 0 else 0 for x in range(5)].",
+      "keywords": ["if-else", "list comprehension", "conditional", "for"]
+    },
+    {
+      "q": "What are the benefits of using comprehensions?",
+      "a": "They are more concise, readable, and often more efficient than using loops.",
+      "keywords": ["benefits", "concise", "readable", "efficient", "loops"]
+    },
+    {
+      "q": "Does Python support set comprehensions?",
+      "a": "Yes. Example: {x for x in range(5)} creates a set of numbers from 0 to 4.",
+      "keywords": ["set", "comprehension", "for", "curly braces"]
+    }
+  ],
+  "Exception_Handling": [
+    {
+      "q": "How do you handle exceptions in Python?",
+      "a": "Using try, except, finally, and optionally else blocks.",
+      "keywords": ["try", "except", "finally", "else", "exception", "handling"]
+    },
+    {
+      "q": "What is the difference between except Exception and except?",
+      "a": "except Exception catches specific exceptions, while a bare except catches all errors (not recommended).",
+      "keywords": ["except", "Exception", "specific", "bare except", "errors"]
+    },
+    {
+      "q": "How do you raise an exception manually?",
+      "a": "Use the raise keyword. Example: raise ValueError(\"Invalid input\").",
+      "keywords": ["raise", "exception", "manually", "ValueError"]
+    },
+    {
+      "q": "What is a custom exception in Python?",
+      "a": "A user-defined exception created by subclassing the Exception class.",
+      "keywords": ["custom", "exception", "subclassing", "user-defined"]
+    },
+    {
+      "q": "What is the purpose of the finally block?",
+      "a": "It executes cleanup code regardless of whether an exception occurred.",
+      "keywords": ["finally", "cleanup", "exception", "always executes"]
+    }
+  ],
+  "Modules_and_Packages": [
+    {
+      "q": "What is the difference between a module and a package?",
+      "a": "A module is a single .py file. A package is a directory with an __init__.py file containing multiple modules.",
+      "keywords": ["module", "package", ".py", "__init__.py", "directory"]
+    },
+    {
+      "q": "How do you import a module in Python?",
+      "a": "Use import module_name or from module_name import item.",
+      "keywords": ["import", "module", "from", "as", "Python"]
+    },
+    {
+      "q": "What is the purpose of __init__.py?",
+      "a": "It marks a directory as a Python package and can contain initialization code.",
+      "keywords": ["__init__.py", "package", "directory", "initialization"]
+    },
+    {
+      "q": "How can you access functions from another file?",
+      "a": "Import the file as a module and call the function using dot notation.",
+      "keywords": ["access", "functions", "import", "module", "dot notation"]
+    },
+    {
+      "q": "How do you explore module contents?",
+      "a": "Use dir(module) to list attributes and help(module) for documentation.",
+      "keywords": ["explore", "module", "contents", "dir()", "help()"]
+    }
+  ],
+  "Object_Oriented_Programming_OOP_1": [
+    {
+      "q": "What is object-oriented programming in Python?",
+      "a": "OOP is a programming paradigm based on the concept of \"objects\" which contain data (attributes) and code (methods).",
+      "keywords": ["OOP", "object-oriented", "attributes", "methods", "paradigm"]
+    },
+    {
+      "q": "How do you define a class in Python?",
+      "a": "Use the class keyword. Example: class Person:.",
+      "keywords": ["define", "class", "class keyword", "Person", "example"]
+    },
+    {
+      "q": "What is the purpose of the __init__ method?",
+      "a": "It's the constructor method that gets called automatically when an object is created.",
+      "keywords": ["__init__", "constructor", "method", "object", "creation"]
+    },
+    {
+      "q": "How do you create an object from a class?",
+      "a": "By calling the class like a function. Example: p = Person().",
+      "keywords": ["create", "object", "instantiation", "class", "Person()"]
+    },
+    {
+      "q": "What are instance variables?",
+      "a": "Variables that are specific to each object, typically defined using self.",
+      "keywords": ["instance", "variables", "self", "object", "specific"]
+    }
+  ],
+  "Object_Oriented_Programming_OOP_2": [
+    {
+      "q": "What is inheritance in Python?",
+      "a": "Inheritance allows one class to inherit attributes and methods from another class.",
+      "keywords": ["inheritance", "class", "attributes", "methods", "parent", "child"]
+    },
+    {
+      "q": "How do you override a method in a child class?",
+      "a": "Define a method with the same name as in the parent class.",
+      "keywords": ["override", "method", "same name", "parent", "child"]
+    },
+    {
+      "q": "What is polymorphism?",
+      "a": "Polymorphism allows methods with the same name to behave differently depending on the object type.",
+      "keywords": ["polymorphism", "same name", "behave differently", "object type"]
+    },
+    {
+      "q": "What are class methods and how do you define them?",
+      "a": "Class methods affect the class as a whole and use the @classmethod decorator and cls as the first parameter.",
+      "keywords": ["class methods", "@classmethod", "decorator", "cls"]
+    },
+    {
+      "q": "What is encapsulation?",
+      "a": "Encapsulation hides internal object details using private attributes (e.g., __balance).",
+      "keywords": ["encapsulation", "hide", "internal", "private attributes", "__balance"]
+    }
+  ],
+  "File_Handling": [
+    {
+      "q": "How do you open a file in Python?",
+      "a": "Use the open() function. Example: open(\"file.txt\", \"r\").",
+      "keywords": ["open()", "function", "file", "mode"]
+    },
+    {
+      "q": "What are the modes used for file operations?",
+      "a": "Common modes include \"r\" (read), \"w\" (write), \"a\" (append), and \"b\" (binary).",
+      "keywords": ["modes", "r", "w", "a", "b", "read", "write", "append", "binary"]
+    },
+    {
+      "q": "How do you write content to a file?",
+      "a": "Use the write() method. Example: f.write(\"Hello\").",
+      "keywords": ["write()", "method", "content", "file"]
+    },
+    {
+      "q": "What is the purpose of using with open()?",
+      "a": "It automatically handles file closing, even if an exception occurs.",
+      "keywords": ["with", "open()", "context manager", "file closing"]
+    },
+    {
+      "q": "How do you read a file line by line?",
+      "a": "Use a for loop: for line in file: or use readlines().",
+      "keywords": ["read", "file", "line by line", "for loop", "readlines()"]
+    }
+  ],
+  "Working_with_JSON": [
+    {
+      "q": "How do you convert a Python dictionary to a JSON string?",
+      "a": "Use json.dumps(dict).",
+      "keywords": ["convert", "dictionary", "JSON string", "json.dumps()"]
+    },
+    {
+      "q": "How do you convert a JSON string to a Python dictionary?",
+      "a": "Use json.loads(json_string).",
+      "keywords": ["convert", "JSON string", "dictionary", "json.loads()"]
+    },
+    {
+      "q": "How do you read JSON data from a file?",
+      "a": "Use json.load(file_object).",
+      "keywords": ["read", "JSON", "file", "json.load()"]
+    },
+    {
+      "q": "How do you write JSON data to a file?",
+      "a": "Use json.dump(data, file_object).",
+      "keywords": ["write", "JSON", "file", "json.dump()"]
+    },
+    {
+      "q": "What module is used to work with JSON in Python?",
+      "a": "The built-in json module.",
+      "keywords": ["module", "json", "built-in"]
+    }
+  ],
+  "Virtual_Environments_and_pip": [
+    {
+      "q": "What is a virtual environment in Python?",
+      "a": "A virtual environment is an isolated environment that allows you to manage dependencies separately from the system Python.",
+      "keywords": ["virtual", "environment", "isolated", "dependencies", "venv"]
+    },
+    {
+      "q": "How do you create a virtual environment?",
+      "a": "Use python -m venv env_name.",
+      "keywords": ["create", "virtual environment", "python -m venv", "env_name"]
+    },
+    {
+      "q": "How do you activate a virtual environment?",
+      "a": "On Windows: env_name\\Scripts\\activate, on Unix: source env_name/bin/activate.",
+      "keywords": ["activate", "virtual environment", "Windows", "Unix", "source"]
+    },
+    {
+      "q": "How do you install packages using pip?",
+      "a": "Use pip install package_name.",
+      "keywords": ["install", "packages", "pip", "package_name"]
+    },
+    {
+      "q": "How do you freeze and save installed packages to a file?",
+      "a": "Use pip freeze > requirements.txt.",
+      "keywords": ["freeze", "save", "packages", "pip freeze", "requirements.txt"]
+    }
+  ],
+  "Web_Scraping_using_BeautifulSoup": [
+    {
+      "q": "What is web scraping in Python?",
+      "a": "Web scraping is the process of extracting data from websites using tools like requests and BeautifulSoup.",
+      "keywords": ["web scraping", "extract", "data", "websites", "requests", "BeautifulSoup"]
+    },
+    {
+      "q": "What is BeautifulSoup used for?",
+      "a": "BeautifulSoup is a library used to parse HTML/XML documents and extract data from specific tags or structures.",
+      "keywords": ["BeautifulSoup", "library", "parse", "HTML", "XML", "tags"]
+    },
+    {
+      "q": "How do you find all <a> tags on a webpage?",
+      "a": "Use soup.find_all('a') after parsing the HTML with BeautifulSoup.",
+      "keywords": ["find_all()", "a tags", "anchor", "soup", "HTML"]
+    },
+    {
+      "q": "What is the purpose of the requests module in web scraping?",
+      "a": "It is used to send HTTP requests and retrieve web page content.",
+      "keywords": ["requests", "module", "HTTP", "requests", "content"]
+    },
+    {
+      "q": "How can you get the text content of an HTML element?",
+      "a": "Use .text or .get_text() on a BeautifulSoup element.",
+      "keywords": ["text", "content", ".text", ".get_text()", "BeautifulSoup"]
+    }
+  ],
+  "APIs_and_Requests": [
+    {
+      "q": "What is an API?",
+      "a": "API (Application Programming Interface) is a way for programs to communicate with each other, often over the web.",
+      "keywords": ["API", "Application", "Programming", "Interface", "communicate", "web"]
+    },
+    {
+      "q": "How do you make a GET request using Python?",
+      "a": "Use requests.get(url) from the requests library.",
+      "keywords": ["GET", "request", "requests", "library", "url"]
+    },
+    {
+      "q": "How do you send data in a POST request?",
+      "a": "Use requests.post(url, data=payload) where payload is a dictionary of form data.",
+      "keywords": ["POST", "request", "requests", "data", "payload", "dictionary"]
+    },
+    {
+      "q": "How do you convert JSON response to a dictionary?",
+      "a": "Use .json() method on the response object. Example: response.json().",
+      "keywords": ["convert", "JSON", "response", "dictionary", ".json()"]
+    },
+    {
+      "q": "How do you pass headers in an API request?",
+      "a": "Use the headers parameter: requests.get(url, headers={'Authorization': 'Token'}).",
+      "keywords": ["headers", "API", "request", "Authorization", "Token"]
+    }
+  ],
+  "Pandas_Basics": [
+    {
+      "q": "What is Pandas in Python?",
+      "a": "Pandas is a library used for data manipulation and analysis, built on top of NumPy.",
+      "keywords": ["Pandas", "library", "data", "manipulation", "analysis", "NumPy"]
+    },
+    {
+      "q": "What is a DataFrame?",
+      "a": "A DataFrame is a 2D labeled data structure with columns of potentially different types.",
+      "keywords": ["DataFrame", "2D", "labeled", "data structure", "columns"]
+    },
+    {
+      "q": "How do you read a CSV file into a DataFrame?",
+      "a": "Use pd.read_csv('file.csv').",
+      "keywords": ["read", "CSV", "file", "pd.read_csv()", "DataFrame"]
+    },
+    {
+      "q": "How do you filter rows based on a condition?",
+      "a": "Use boolean indexing. Example: df[df['Age'] > 30].",
+      "keywords": ["filter", "rows", "condition", "boolean", "indexing"]
+    },
+    {
+      "q": "How do you handle missing values in Pandas?",
+      "a": "Use df.dropna() to remove or df.fillna(value) to replace missing values.",
+      "keywords": ["handle", "missing", "values", "dropna()", "fillna()"]
+    }
+  ],
+  "NumPy_Basics": [
+    {
+      "q": "What is NumPy used for?",
+      "a": "NumPy is used for numerical operations, including working with arrays, matrices, and performing mathematical computations.",
+      "keywords": ["NumPy", "numerical", "operations", "arrays", "matrices"]
+    },
+    {
+      "q": "How do you create a NumPy array?",
+      "a": "Use np.array([1, 2, 3]).",
+      "keywords": ["create", "NumPy", "array", "np.array()"]
+    },
+    {
+      "q": "What is the difference between a list and a NumPy array?",
+      "a": "NumPy arrays are faster, consume less memory, and support element-wise operations.",
+      "keywords": ["difference", "list", "NumPy array", "faster", "memory", "element-wise"]
+    },
+    {
+      "q": "How do you generate a range of numbers in NumPy?",
+      "a": "Use np.arange(start, stop, step).",
+      "keywords": ["generate", "range", "numbers", "np.arange()", "start", "stop", "step"]
+    },
+    {
+      "q": "How do you perform matrix multiplication in NumPy?",
+      "a": "Use np.dot(A, B) or A @ B.",
+      "keywords": ["matrix", "multiplication", "np.dot()", "@ operator"]
+    }
+  ],
+  "Matplotlib_for_Data_Visualization": [
+    {
+      "q": "What is Matplotlib?",
+      "a": "Matplotlib is a Python library for creating static, animated, and interactive visualizations like line plots, bar charts, and scatter plots.",
+      "keywords": ["Matplotlib", "library", "visualizations", "plots", "charts"]
+    },
+    {
+      "q": "How do you create a simple line plot?",
+      "a": "Use plt.plot(x, y) followed by plt.show().",
+      "keywords": ["create", "line", "plot", "plt.plot()", "plt.show()"]
+    },
+    {
+      "q": "How do you add a title and axis labels to a plot?",
+      "a": "Use plt.title(), plt.xlabel(), and plt.ylabel().",
+      "keywords": ["add", "title", "labels", "plt.title()", "plt.xlabel()", "plt.ylabel()"]
+    },
+    {
+      "q": "How do you display multiple plots in the same figure?",
+      "a": "Use plt.subplot() to define multiple subplots.",
+      "keywords": ["display", "multiple", "plots", "subplot", "figure"]
+    },
+    {
+      "q": "How do you save a plot as an image file?",
+      "a": "Use plt.savefig('filename.png').",
+      "keywords": ["save", "plot", "image", "plt.savefig()", "filename"]
+    }
+  ]
+  }
+}
